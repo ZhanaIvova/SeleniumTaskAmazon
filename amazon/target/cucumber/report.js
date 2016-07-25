@@ -16,7 +16,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 4,
-  "name": "Amazon URL is https://www.amazon.co.uk/",
+  "name": "Amazon URL is \"https://www.amazon.co.uk/\"",
   "keyword": "Given "
 });
 formatter.step({
@@ -116,7 +116,7 @@ formatter.step({
 });
 formatter.step({
   "line": 24,
-  "name": "Verify edit screen price is 3.85",
+  "name": "Verify edit screen price is £3.85",
   "keyword": "And "
 });
 formatter.step({
@@ -126,168 +126,174 @@ formatter.step({
 });
 formatter.step({
   "line": 26,
-  "name": "Total price is 3.85",
+  "name": "Total price is £3.85",
   "keyword": "And "
 });
 formatter.match({
-  "location": "NavigateToAmazonTest.givenUrl()"
+  "arguments": [
+    {
+      "val": "https://www.amazon.co.uk/",
+      "offset": 15
+    }
+  ],
+  "location": "NavigateToAmazonTest.givenUrl(String)"
 });
 formatter.result({
-  "duration": 11749414222,
+  "duration": 6401101917,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyPageCorrect()"
 });
 formatter.result({
-  "duration": 23318268,
+  "duration": 28457535,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.search()"
 });
 formatter.result({
-  "duration": 5092666454,
+  "duration": 5277277642,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyFirstItem()"
 });
 formatter.result({
-  "duration": 2157755806,
+  "duration": 2134848897,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyBadgeFromSearch()"
 });
 formatter.result({
-  "duration": 52731900,
+  "duration": 39641184,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyType()"
 });
 formatter.result({
-  "duration": 43021513,
+  "duration": 44572687,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyPriceFromSearch()"
 });
 formatter.result({
-  "duration": 43043635,
+  "duration": 39604634,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.select()"
 });
 formatter.result({
-  "duration": 3197950065,
+  "duration": 1940683145,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyTitle()"
 });
 formatter.result({
-  "duration": 64139025,
+  "duration": 60548688,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyBadge()"
 });
 formatter.result({
-  "duration": 26854419,
+  "duration": 21210493,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyPrice()"
 });
 formatter.result({
-  "duration": 41226985,
+  "duration": 40418695,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyPaperback()"
 });
 formatter.result({
-  "duration": 40135585,
+  "duration": 43552465,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.addedBookToBasket()"
 });
 formatter.result({
-  "duration": 3234074015,
+  "duration": 999242367,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyNotificationShown()"
 });
 formatter.result({
-  "duration": 128374236,
+  "duration": 144799752,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.titleIsAddedToBasket()"
 });
 formatter.result({
-  "duration": 38799228,
+  "duration": 40404267,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyOneItemInTheBasket()"
 });
 formatter.result({
-  "duration": 19878,
+  "duration": 80197748,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.gotoEditBasket()"
 });
 formatter.result({
-  "duration": 1115757081,
+  "duration": 1134831263,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyBookShown()"
 });
 formatter.result({
-  "duration": 202998595,
+  "duration": 67053809,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyTitleOnEditScreen()"
 });
 formatter.result({
-  "duration": 168434475,
+  "duration": 113333812,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyTypeOnEditScreen()"
 });
 formatter.result({
-  "duration": 60593897,
+  "duration": 61285801,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyPriceOnEditScreen()"
 });
 formatter.result({
-  "duration": 50571542,
+  "duration": 147534986,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyQuantity()"
 });
 formatter.result({
-  "duration": 70391493,
+  "duration": 50819063,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToAmazonTest.verifyTotalPrice()"
 });
 formatter.result({
-  "duration": 63692397,
+  "duration": 51590803,
   "status": "passed"
 });
 });

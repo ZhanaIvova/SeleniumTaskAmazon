@@ -1,7 +1,7 @@
 Feature: First item
 
   Scenario: Navigate to Amazon
-    Given Amazon URL is https://www.amazon.co.uk/
+    Given Amazon URL is "https://www.amazon.co.uk/"
     Then Verify that the page is correct and opened
     When Search for Game of Thrones in section books
     Then Verify that the first items has the title: A Game of Thrones (A Song of Ice and Fire, Book 1)

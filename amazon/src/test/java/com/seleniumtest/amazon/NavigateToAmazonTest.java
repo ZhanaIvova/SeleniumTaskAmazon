@@ -19,14 +19,14 @@ import junit.framework.TestCase;
 public class NavigateToAmazonTest extends TestCase {
 	int x = 0;
 
-	WebDriver driver = WebDriverFactory.getDriverInstance();
-
+	WebDriver driver = WebDriverFactory.getDriverInstance("chrome");
+	String pageUrl = "https://www.amazon.co.uk/";
+	
 	private WebElement firstSearchResultElement;
 
-	@Given("Amazon URL is https://www.amazon.co.uk/")
-	public void givenUrl() {
-		System.out.println();
-		driver.get("https://www.amazon.co.uk/");
+	@Given("Amazon URL is \"(.*?)\"")
+	public void givenUrl(String url) {
+		driver.get(url);
 	}
 
 	public void checkPageIsReady() {
@@ -59,8 +59,7 @@ public class NavigateToAmazonTest extends TestCase {
 	public void verifyPageCorrect() {
 		checkPageIsReady();
 		String actualUrl = driver.getCurrentUrl();
-		String expectedUrl = "https://www.amazon.co.uk/";
-		assertEquals(actualUrl, expectedUrl);
+		assertEquals(actualUrl, pageUrl);
 	}
 
 	@When("Search for Game of Thrones in section books")
@@ -165,16 +164,13 @@ public class NavigateToAmazonTest extends TestCase {
 
 	@And("There is one item in the basket")
 	public void verifyOneItemInTheBasket() {
-		// WebElement oneItemElement =
-		// driver.findElement(By.cssSelector(".huc-subtotal"));
-		// assertEquals("1 item", oneItemElement);
-
+		WebElement oneItemElement = driver.findElement(By.cssSelector(".huc-subtotal"));
+		assertTrue(oneItemElement.getText().contains("1 item"));
 	}
 
 	@When("Click on edit basket")
 	public void gotoEditBasket() {
 		driver.findElement(By.id("hlb-view-cart-announce")).click();
-
 	}
 
 	@Then("verify the book is shown")
@@ -198,16 +194,14 @@ public class NavigateToAmazonTest extends TestCase {
 		WebElement listItem = cartForm.findElement(By.cssSelector(".sc-list-item-content"));
 		WebElement titleOnEdit = listItem.findElement(By.cssSelector(".sc-product-binding"));
 		assertEquals("Paperback", titleOnEdit.getText());
-
 	}
 
-	@And("Verify edit screen price is 3.85")
+	@And("Verify edit screen price is £3.85")
 	public void verifyPriceOnEditScreen() {
 		WebElement cartForm = driver.findElement(By.id("activeCartViewForm"));
 		WebElement listItem = cartForm.findElement(By.cssSelector(".sc-list-item-content"));
 		WebElement titleOnEdit = listItem.findElement(By.cssSelector(".sc-product-price"));
 		assertEquals("£3.85", titleOnEdit.getText());
-
 	}
 
 	@And("Quantity is 1")
@@ -216,14 +210,13 @@ public class NavigateToAmazonTest extends TestCase {
 		WebElement listItem = cartForm.findElement(By.cssSelector(".sc-list-item-content"));
 		WebElement quantityElement = listItem.findElement(By.cssSelector(".a-dropdown-prompt"));
 		assertEquals("1", quantityElement.getText());
-
 	}
 
-	@And("Total price is 3.85")
+	@And("Total price is £3.85")
 	public void verifyTotalPrice() {
 		WebElement colorPrice = driver.findElement(By.cssSelector(".sc-subtotal"));
 		WebElement totalPriceElement = colorPrice.findElement(By.cssSelector(".a-color-price"));
 		assertEquals("£3.85", totalPriceElement.getText());
-
+		driver.close();
 	}
 }
